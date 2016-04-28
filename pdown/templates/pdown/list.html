@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>List Posts</title>
+    {{ form.media }}
+</head>
+<body>
+{% for post in posts %}
+    <div>{{ post.text }}    <a href="{% url 'update' post.id %}">Update</a></div> <br>
+{% endfor %}
+
+<a href="{% url 'create' %}">ADD</a>
+</body>
+</html>
