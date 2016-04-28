@@ -1,3 +1,4 @@
+{% load markdown_deux_tags %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,7 +8,7 @@
 </head>
 <body>
 {% for post in posts %}
-    <div>{{ post.text }}    <a href="{% url 'update' post.id %}">Update</a></div> <br>
+    <div>{{ post.text|markdown }}    <a href="{% url 'update' post.id %}">Update</a></div> <br>
 {% endfor %}
 
 <a href="{% url 'create' %}">ADD</a>
